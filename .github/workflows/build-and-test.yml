@@ -1,0 +1,29 @@
+name: build-and-test
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build projects
+        run: dotnet build --no-restore
+      - name: Install dev dependencies
+        run: dotnet tool restore
+      - name: Check code format
+        run: dotnet csharpier --check
+      - name: Check code style
+        run: dotnet format style --verify-no-changes --no-restore --verbosity diagnostic
+      - name: Run unit tests
+        run: dotnet test --no-restore
