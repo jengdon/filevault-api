@@ -7,6 +7,7 @@
 # File Vault API
 
 ![Build badge](https://github.com/jengdon/filevault-api/actions/workflows/build.yml/badge.svg?event=push)
+[![codecov](https://codecov.io/gh/jengdon/filevault-api/branch/main/graph/badge.svg?token=VMXNIAFXND)](https://codecov.io/gh/jengdon/filevault-api)
 
 This repository contains the code for File Vault's REST API, a service for storing your files with
 end to end encryption.
