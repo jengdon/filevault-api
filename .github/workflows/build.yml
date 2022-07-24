@@ -26,4 +26,6 @@ jobs:
       - name: Check code style
         run: dotnet format style --verify-no-changes --no-restore --verbosity diagnostic
       - name: Run unit tests
-        run: dotnet test --no-restore
+        run: dotnet test FileVault.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+      - name: Send coverage data to Codecov
+        uses: codecov/codecov-action@v3
