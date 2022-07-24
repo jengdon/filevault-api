@@ -1,6 +1,6 @@
 <p align="center">
     <img width="100" height="100"
-        src="https://github.com/jengdon/filevault-api/blob/main/img/filevault.svg?raw=true"
+        src="https://github.com/jengdon/filevault-api/blob/main/.img/filevault.svg?raw=true"
         alt="File vault" />
 </p>
 
